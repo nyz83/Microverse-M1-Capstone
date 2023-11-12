@@ -1,0 +1,14 @@
+<svg width="200" height="200">
+    <defs>
+        <pattern id="pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="5" cy="5" r="5" fill="hsl(6, 82%, 59%)" />
+            <circle cx="15" cy="15" r="5" fill="hsl(222, 11%, 17%)" />
+        </pattern>
+
+        <clipPath id="circleClip">
+            <circle cx="100" cy="100" r="80" />
+        </clipPath>
+    </defs>
+
+    <rect x="0" y="0" width="200" height="200" fill="url(#pattern)" clip-path="url(#circleClip)" />
+</svg>
