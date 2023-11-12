@@ -80,6 +80,10 @@ a {
   display: block;
 }
 
+a:hover {
+    opacity: 0.5;
+}
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
