@@ -17,7 +17,7 @@
     <button class="mobile-nav-toggle" aria-controls="navigation" aria-expanded="false" type="button">
       <span class="visually-hidden">Menu</span>
     </button>
-    <nav class="navigation">
+    <nav class="navigation" id="navigation" data-visible="false">
       <div class="secondary-nav">
         <div class="container">
           <ul class="nav-list flex" role="list" aria-label="Secondary">
@@ -44,7 +44,7 @@
       <div class="primary-nav">
         <div class="container">
           <ul class="nav-list flex" role="list" aria-label="Primary">
-            <li class="nav-logo ">
+            <li>
               <a href="./index.html">
                 <picture>
                   <source media="(max-width: 768px)" srcset="./assets/images/pic-main-logo-red.webp" loading="lazy" >
@@ -76,7 +76,7 @@
     <section class="hero stacked pos-relative">
       <div class="overlay"></div>
       <img src="./assets/images/pic-hero-bg.webp" alt="" class="hero-img" loading="lazy">
-      <div class="container flow padding-block-900 ff-secondary">
+      <div class="container flow padding-block-1200 ff-secondary">
         <p class="fs-600 text-primary-400 uppercase">
           Welcome to woody
         </p>
@@ -188,18 +188,19 @@
             </div>
           </div>
         </template>
-        <button class="load-more default-border fs-400 uppercase text-neutral-800" type="button">
-          <p>more</p>
-          <svg width="50" height="50" viewBox="0 0 24 24" fill="#ec5242">
-            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-          </svg>
-        </button>
+          <button class="load-more default-border fs-400 uppercase text-neutral-800" type="button">
+            <p>more</p>
+            <svg width="50" height="50" viewBox="0 0 24 24" fill="#ec5242">
+              <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+            </svg>
+          </button>
+       
       </div>
     </section>
   </main>
   <footer>
-    <section class="bg-neutral-800 text-center padding-400">
-      <div class="sponsor container flow">
+    <section class="sponsor bg-neutral-800 text-center padding-400">
+      <div class="container flow">
         <h2 class=" fs-600 text-neutral-200 capitalize text-opacity">
           partner
         </h2>

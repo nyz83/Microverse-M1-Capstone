@@ -3,12 +3,23 @@ const navToggle = document.querySelector('.mobile-nav-toggle');
 const navigation = document.querySelector('.navigation');
 
 navToggle.addEventListener('click', () => {
-  if (navigation.hasAttribute('data-visible')) {
-    navToggle.setAttribute('aria-expanded', false);
-  } else {
+  const visibility = navigation.getAttribute('data-visible');
+  if (visibility === 'false') {
+    navigation.setAttribute('data-visible', true);
     navToggle.setAttribute('aria-expanded', true);
+  } else {
+    navigation.setAttribute('data-visible', false);
+    navToggle.setAttribute('aria-expanded', false);
   }
-  navigation.toggleAttribute('data-visible');
+});
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  document.body.classList.add('resize-animation-stopper');
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove('resize-animation-stopper');
+  }, 400);
 });
 
 // For Carpenters

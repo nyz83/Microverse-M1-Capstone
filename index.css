@@ -1,9 +1,4 @@
-/**
- * Variables
- *
- * @format
- */
-
+/* Variables */
 :root {
   --step--2: clamp(0.8781rem, 0.8028rem + 0.3443vw, 1.1256rem);
   --step--1: clamp(0.9375rem, 0.7661rem + 0.7835vw, 1.5006rem);
@@ -28,6 +23,7 @@
   --size-700: 2.5em;
   --size-800: 3em;
   --size-900: 3.5em;
+  --size-1200: 5em;
 }
 
 /* Reset */
@@ -149,6 +145,11 @@ select {
   width: 1px;
 }
 
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
 .flow > * + * {
   margin-top: var(--flow-spacer, 3rem);
 }
@@ -233,11 +234,15 @@ select {
 }
 
 .padding-block-800 {
-  padding-block: var(--size-800);
+  padding-block: var(--size-8);
 }
 
 .padding-block-900 {
   padding-block: var(--size-900);
+}
+
+.padding-block-1200 {
+  padding-block: var(--size-1200);
 }
 
 /* Font */
@@ -339,15 +344,7 @@ select {
   display: none;
 }
 
-.nav-logo {
-  margin-right: auto;
-}
-
-.nav-logo img {
-  width: 180px;
-}
-
-.nav-list {
+.navigation .nav-list {
   --gap: var(--size-600);
 
   justify-content: flex-end;
@@ -356,36 +353,41 @@ select {
   font-size: var(--step--2);
 }
 
-.nav-list a {
+.navigation .nav-list a {
   text-decoration: none;
 }
 
-.primary-nav {
+.navigation .primary-nav {
   background-color: transparent;
 }
 
-.primary-nav a {
+.navigation .secondary-nav {
+  background-color: hsl(var(--clr-neutral-800));
+}
+
+.navigation .primary-nav a {
   color: hsl(var(--clr-neutral-800));
 }
 
-.secondary-nav a {
+.navigation .secondary-nav a {
   color: hsl(var(--clr-neutral-200));
 }
 
-.primary-nav .nav-list li:nth-child(2) a {
+.navigation .primary-nav .nav-list li:first-child {
+  margin-right: auto;
+  width: 180px;
+}
+
+.navigation .primary-nav .nav-list li:nth-child(2) a {
   color: hsl(var(--clr-primary-400));
 }
 
-.primary-nav .nav-list li:last-child a {
+.navigation .primary-nav .nav-list li:last-child a {
   padding: var(--size-300);
   outline: 3px solid hsl(var(--clr-primary-400));
 }
 
-.secondary-nav {
-  background-color: hsl(var(--clr-neutral-800));
-}
-
-.secondary-nav .nav-list {
+.navigation .secondary-nav .nav-list {
   padding-block: var(--size-250);
 }
 
@@ -411,49 +413,43 @@ select {
   }
 
   .navigation {
-    display: none;
-    position: fixed;
-    inset: 0 25% 0 0;
-    padding: min(12vh, 18rem) 0;
-    background-color: hsla(228, 12%, 17%, 0.9);
-    z-index: 3;
-  }
-
-  .nav-logo {
-    margin-inline: auto;
-    bottom: 2rem;
-  }
-
-  .navigation[data-visible] {
     display: flex;
     flex-direction: column;
     gap: var(--size-400);
-    justify-content: flex-start;
+    position: fixed;
+    inset: 0 25% 0 0;
+    padding: min(12vh, 18rem) var(--size-300);
+    background-color: hsla(228, 12%, 17%, 0.9);
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+  .navigation[data-visible="true"] {
+    transform: translateX(0%);
   }
 
   .navigation .nav-list a {
     color: hsl(var(--clr-neutral-200));
   }
 
-  .primary-nav .nav-list li:last-child a {
-    padding: 0;
-    outline: none;
-  }
-
-  .secondary-nav {
-    order: 2;
-  }
-
-  .nav-list {
+  .navigation .nav-list {
     flex-direction: column;
+    align-items: flex-start;
     gap: var(--size-400);
     padding-block: 0;
     color: hsl(var(--clr-primary-400));
     font-size: var(--step-1);
   }
 
+  .navigation .primary-nav .nav-list li:last-child a {
+    padding: 0;
+    outline: none;
+  }
+
   .navigation .secondary-nav {
     background-color: transparent;
+    order: 2;
   }
 }
 
@@ -496,7 +492,7 @@ select {
   z-index: -4;
 }
 
-.cards {
+.cta .cards {
   display: grid;
   gap: var(--size-250);
 }
@@ -505,11 +501,11 @@ select {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--size-300);
-  text-align: left;
   place-items: center;
+  gap: var(--size-300);
   padding: var(--size-250);
   background-color: hsl(var(--clr-neutral-800) / 0.4);
+  text-align: left;
 }
 
 .card__img {
@@ -651,12 +647,6 @@ select {
 }
 
 /* About Page */
-.about-more {
-  --overlay-color: var(--clr-primary-400);
-  --opacity: 0.77;
-  --flow-spacer: 1.5rem;
-}
-
 .about-hero {
   --flow-spacer: 4rem;
 
@@ -684,5 +674,21 @@ select {
 @media (min-width: 1000px) {
   .about-logo__img {
     padding-inline: calc(var(--size-800) * 2);
+  }
+}
+
+.about-more {
+  --overlay-color: var(--clr-primary-400);
+  --opacity: 0.77;
+  --flow-spacer: 1.5rem;
+}
+
+.about-more__projects {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .about-more__projects {
+    flex-direction: row;
   }
 }
