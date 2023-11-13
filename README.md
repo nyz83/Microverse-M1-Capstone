@@ -41,6 +41,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
+- Original design idea by [Cindy Shin in Behance](https://www.behance.net/adagio07)
 
 ## 📝 License
 
