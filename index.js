@@ -8,15 +8,18 @@ navToggle.addEventListener('click', () => {
   if (visibility === 'false') {
     navigation.setAttribute('data-visible', true);
     navToggle.setAttribute('aria-expanded', true);
+    document.body.classList.add('mobile-nav-open');
   } else {
     navigation.setAttribute('data-visible', false);
     navToggle.setAttribute('aria-expanded', false);
+    document.body.classList.remove('mobile-nav-open');
   }
 });
 
 navItems.forEach((navItem) => navItem.addEventListener('click', () => {
   navigation.setAttribute('data-visible', false);
   navToggle.setAttribute('aria-expanded', false);
+  document.body.classList.remove('mobile-nav-open');
 }));
 
 // Stop Animation on resize
