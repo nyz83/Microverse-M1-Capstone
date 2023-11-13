@@ -23,20 +23,20 @@
           <ul class="nav-list flex" role="list" aria-label="Secondary">
             <div class="flex">
               <li>
-                <a href=""><img src="./assets/images/icon-twiiter.svg" alt="twitter" loading="lazy" /></a>
+                <a href="" class="nav-link"><img src="./assets/images/icon-twiiter.svg" alt="twitter" loading="lazy" /></a>
               </li>
               <li>
-                <a href=""><img src="./assets/images/icon-facebook.svg" alt="facebook" loading="lazy" /></a>
+                <a href="" class="nav-link"><img src="./assets/images/icon-facebook.svg" alt="facebook" loading="lazy" /></a>
               </li>
             </div>
             <li>
-              <a href="#" class="text-neutral-200">English</a>
+              <a href="#" class="nav-link text-neutral-200">English</a>
             </li>
             <li>
-              <a href="#" class="text-neutral-200">Log In</a>
+              <a href="#" class="nav-link text-neutral-200">Log In</a>
             </li>
             <li>
-              <a href="#" class="text-neutral-200">Sign Up</a>
+              <a href="#" class="nav-link text-neutral-200">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -45,7 +45,7 @@
         <div class="container">
           <ul class="nav-list flex" role="list" aria-label="Primary">
             <li>
-              <a href="./index.html">
+              <a href="./index.html" class="nav-link">
                 <picture>
                   <source media="(max-width: 768px)" srcset="./assets/images/pic-main-logo-red.webp" loading="lazy" >
                   <img src="./assets/images/pic-main-logo-dark.webp" alt="" loading="lazy">
@@ -53,19 +53,19 @@
               </a>
             </li>
             <li>
-              <a href="./about.html" class="text-primary-400">About</a>
+              <a href="./about.html" class="nav-link text-primary-400">About</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="#services" class="nav-link">Services</a>
             </li>
             <li>
-              <a href="#">Feedbacks</a>
+              <a href="#carpenters" class="nav-link">Carpenters</a>
             </li>
             <li>
-              <a href="#">Our Clients</a>
+              <a href="#" class="nav-link">Our Clients</a>
             </li>
             <li>
-              <a href="#">Contact Now</a>
+              <a href="#" class="nav-link">Contact Now</a>
             </li>
           </ul>
         </div>
@@ -103,7 +103,7 @@
         </div>
       </div>
     </section>
-    <section class="cta stacked pos-relative text-center">
+    <section id="services" class="cta stacked pos-relative text-center">
       <div class="overlay"></div>
       <img src="./assets/images/pic-cta-bg.webp" alt="" class="cta-img" loading="lazy">
       <div class="container flow padding-block-600">
@@ -168,17 +168,17 @@
             </p>
           </div>
         </div>
-        <a href="" class="fs-500 text-neutral-200 uppercase">
+        <a href="" class="nav-link fs-500 text-neutral-200 uppercase">
           See the full services
         </a>
       </div>
     </section>
-    <section class="padding-block-600 text-center">
+    <section id="carpenters" class="padding-block-600 text-center">
       <div class="container flow">
         <h2 class="fs-600 text-neutral-800 capitalize fw-extra-bold">Our Members
         </h2>
         <div class="carpenters"></div>
-        <template id="carpenter-template">
+          <template id="carpenter-template">
           <div class="carpenter">
             <img id="carpenterImg" class="carpenter__img" src="{{pic}}" alt="" loading="lazy"/>
             <div class="carpenter__info | flow" style="--flow-spacer: 0.3rem">
@@ -187,11 +187,21 @@
               <p id="carpenterBio" class="fs-300 text-neutral-800"></p>
             </div>
           </div>
-        </template>
-          <button class="load-more default-border fs-400 uppercase text-neutral-800" type="button">
-            <p>more</p>
-            <svg width="50" height="50" viewBox="0 0 24 24" fill="#ec5242">
-              <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </template>
+          <button class="see-more flex default-border fs-400 uppercase" type="button">
+            <p class="">see more</p>
+            <svg class="" width="40px" height="40px" viewBox="-1.4 -1.4 22.80 22.80" fill="none">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="SVGRepo_iconCarrier"> <path stroke="#ec5242" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7l6 6 6-6"/> </g>
+            </svg>
+          </button>
+          <button class="see-less flex default-border fs-400 uppercase text-neutral-800" type="button">
+            <p class="">see less</p>
+            <svg class="" width="40px" height="40px" viewBox="-1.4 -1.4 22.80 22.80" fill="none" transform="rotate(180)">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+              <g id="SVGRepo_iconCarrier"> <path stroke="#ec5242" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7l6 6 6-6"/> </g>
             </svg>
           </button>
        
@@ -199,23 +209,23 @@
     </section>
   </main>
   <footer>
-    <section class="sponsor bg-neutral-800 text-center padding-400">
+    <section id="sponsor" class="bg-neutral-800 text-center padding-400">
       <div class="container flow">
         <h2 class=" fs-600 text-neutral-200 capitalize text-opacity">
           partner
         </h2>
         <div class="flex">
           <a href="#">
-            <img class="flex-full-space" src="./assets/images/icon-logo-stripe.svg" alt="" loading="lazy">
+            <img class="" src="./assets/images/icon-logo-stripe.svg" alt="" loading="lazy">
           </a>
           <a href="#">
-            <img class="flex-full-space" src="./assets/images/icon-logo-google.svg" alt="" loading="lazy">
+            <img class="" src="./assets/images/icon-logo-google.svg" alt="" loading="lazy">
           </a>
           <a href="#">
-            <img class="flex-full-space" src="./assets/images/icon-logo-bosch.svg" alt="" loading="lazy">
+            <img class="" src="./assets/images/icon-logo-bosch.svg" alt="" loading="lazy">
           </a>
           <a href="#">
-            <img class="flex-full-space" src="./assets/images/icon-logo-mozilla.svg" alt="" loading="lazy">
+            <img class="" src="./assets/images/icon-logo-mozilla.svg" alt="" loading="lazy">
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 // For navigation
 const navToggle = document.querySelector('.mobile-nav-toggle');
 const navigation = document.querySelector('.navigation');
+const navItems = document.querySelectorAll('.nav-list li a');
 
 navToggle.addEventListener('click', () => {
   const visibility = navigation.getAttribute('data-visible');
@@ -13,6 +14,12 @@ navToggle.addEventListener('click', () => {
   }
 });
 
+navItems.forEach((navItem) => navItem.addEventListener('click', () => {
+  navigation.setAttribute('data-visible', false);
+  navToggle.setAttribute('aria-expanded', false);
+}));
+
+// Stop Animation on resize
 let resizeTimer;
 window.addEventListener('resize', () => {
   document.body.classList.add('resize-animation-stopper');
@@ -64,46 +71,49 @@ const carpentersData = [
 
 const carpentersWrapper = document.querySelector('.carpenters');
 
-function populateCarpenter(template, data) {
-  const
-    {
-      name, pic, position, bio,
-    } = data;
+carpentersData.forEach((carpenter, index) => {
+  const carpenterTemplate = document.querySelector('#carpenter-template');
+  const carpenterElement = carpenterTemplate.content.querySelector('.carpenter').cloneNode(true);
 
-  const carpenterHTML = template.content.cloneNode(true);
+  carpenterElement.setAttribute('data-index', index);
+  carpenterElement.querySelector('#carpenterImg').src = carpenter.pic;
+  carpenterElement.querySelector('#carpenterName').textContent = carpenter.name;
+  carpenterElement.querySelector('#carpenterPosition').textContent = carpenter.position;
+  carpenterElement.querySelector('#carpenterBio').textContent = carpenter.bio;
 
-  carpenterHTML.getElementById('carpenterImg').src = pic;
-  carpenterHTML.getElementById('carpenterName').textContent = name;
-  carpenterHTML.getElementById('carpenterPosition').textContent = position;
-  carpenterHTML.getElementById('carpenterBio').textContent = bio;
-
-  return carpenterHTML;
-}
-
-carpentersData.forEach((carpenter) => {
-  const carpenterTemplate = document.getElementById('carpenter-template');
-  if (carpenterTemplate) {
-    const populatedCarpenter = populateCarpenter(carpenterTemplate, carpenter);
-    carpentersWrapper.appendChild(populatedCarpenter);
-  } else {
-    return null;
-  }
+  carpentersWrapper.appendChild(carpenterElement);
 });
 
-let currentCarpenters = 2;
-const seeMoreBtn = document.querySelector('.load-more');
+const seeMoreBtn = document.querySelector('.see-more');
+const seeLessBtn = document.querySelector('.see-less');
 
 seeMoreBtn.addEventListener('click', () => {
-  const carpentersList = [
-    ...document.querySelectorAll('.carpenters .carpenter'),
-  ];
-  for (let i = currentCarpenters; i < currentCarpenters + 4; i += 1) {
-    if (carpentersList[i]) {
-      carpentersList[i].style.display = 'grid';
-    }
-  }
-  currentCarpenters += 4;
-  if (currentCarpenters >= carpentersList.length) {
+  document.querySelectorAll('.carpenter:not(:nth-child(-n + 2))').forEach((carpenter) => {
+    carpenter.style.display = 'grid';
+  });
+  seeMoreBtn.style.display = 'none';
+  seeLessBtn.style.display = 'flex';
+});
+seeLessBtn.addEventListener('click', () => {
+  document.querySelectorAll('.carpenter:not(:nth-child(-n + 2))').forEach((carpenter) => {
+    carpenter.style.display = 'none';
+  });
+  seeLessBtn.style.display = 'none';
+  seeMoreBtn.style.display = 'flex';
+});
+
+const widthMatch = window.matchMedia('(min-width: 768px)');
+widthMatch.addEventListener('change', (mm) => {
+  if (mm.matches) {
+    document.querySelectorAll('.carpenter').forEach((carpenter) => {
+      carpenter.style.display = 'grid';
+    });
+    seeLessBtn.style.display = 'none';
     seeMoreBtn.style.display = 'none';
+  } else {
+    document.querySelectorAll('.carpenter:not(:nth-child(-n + 2))').forEach((carpenter) => {
+      carpenter.style.display = 'none';
+    });
+    seeMoreBtn.style.display = 'flex';
   }
 });
