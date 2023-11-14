@@ -401,10 +401,18 @@ select {
 }
 
 @media (max-width: 768px) {
+  .primary-header {
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    background-color: hsl(var(--clr-neutral-800) / 0.4);
+    z-index: 999;
+  }
+
   .mobile-nav-toggle {
     display: block;
     position: absolute;
-    top: 0.5rem;
+    top: 0.3rem;
     left: 0.5rem;
     width: 2rem;
     background-image: url('./assets/images/icon-menu-open.svg');
@@ -413,7 +421,7 @@ select {
     background-repeat: no-repeat;
     aspect-ratio: 1 / 1;
     border: transparent;
-    z-index: 9999;
+    z-index: 1000;
   }
 
   .mobile-nav-toggle[aria-expanded='true'] {
@@ -607,7 +615,7 @@ select {
   top: -0.8rem;
   left: -0.8rem;
   width: 70px;
-  background-image: url('/assets/images/icon-checkBoard.svg ');
+  background-image: url('./assets/images/icon-checkBoard.svg ');
   background-repeat: no-repeat;
   aspect-ratio: 1 / 1;
   z-index: -1;
@@ -689,7 +697,7 @@ select {
 .about-hero {
   --flow-spacer: 4rem;
 
-  background-image: url('/assets/images/pic-about-hero-bg.svg');
+  background-image: url('./assets/images/pic-about-hero-bg.svg');
   background-size: cover;
   background-repeat: no-repeat;
 }

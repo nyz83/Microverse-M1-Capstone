@@ -43,3 +43,5 @@ Give a ⭐️ if you like this project!
 - [Microverse](https://www.microverse.org/)
 
 ## 📝 License
+
+This project is [MIT](./LICENSE.md) licensed.
