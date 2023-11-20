@@ -316,7 +316,7 @@ select {
 }
 
 .text-opacity {
-  opacity: var(--opacity, 0.6);
+  opacity: var(--opacity, 0.7);
 }
 
 /* Color */
@@ -572,6 +572,7 @@ select {
 .carpenters {
   display: grid;
   gap: var(--size-600);
+  padding: var(--size-350);
 }
 
 .see-less {
@@ -659,19 +660,27 @@ select {
 }
 
 #sponsor .flex {
-  justify-content: center;
+  --gap: 0;
+
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
 
 #sponsor .flex > * {
-  width: 150px;
+  flex-basis: 125px;
 }
 
 @media (min-width: 768px) {
+  #sponsor .flex {
+    --gap: 3rem;
+
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
   #sponsor .flex > * {
-    width: auto;
-    flex: 1;
+    flex-basis: 300px;
   }
 }
 
