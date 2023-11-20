@@ -74,11 +74,10 @@ const carpentersData = [
 
 const carpentersWrapper = document.querySelector('.carpenters');
 
-carpentersData.forEach((carpenter, index) => {
+carpentersData.forEach((carpenter) => {
   const carpenterTemplate = document.querySelector('#carpenter-template');
   const carpenterElement = carpenterTemplate.content.querySelector('.carpenter').cloneNode(true);
 
-  carpenterElement.setAttribute('data-index', index);
   carpenterElement.querySelector('#carpenterImg').src = carpenter.pic;
   carpenterElement.querySelector('#carpenterName').textContent = carpenter.name;
   carpenterElement.querySelector('#carpenterPosition').textContent = carpenter.position;
