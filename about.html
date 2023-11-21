@@ -1,0 +1,171 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js" defer></script>
+  <title>Carpenters Page</title>
+</head>
+
+<body>
+  <header class="primary-header">
+    <button class="mobile-nav-toggle" aria-controls="navigation" aria-expanded="false" type="button">
+      <span class="visually-hidden">Menu</span>
+    </button>
+
+    <nav class="navigation">
+      <div class="secondary-nav">
+        <div class="container">
+          <ul class="nav-list flex" role="list" aria-label="Secondary">
+            <div class="flex">
+              <li>
+                <a href=""><img src="./assets/images/icon-twiiter.svg" alt="twitter" /></a>
+              </li>
+              <li>
+                <a href=""><img src="./assets/images/icon-facebook.svg" alt="facebook" /></a>
+              </li>
+            </div>
+            <li>
+              <a href="#" class="text-neutral-200">English</a>
+            </li>
+            <li>
+              <a href="#" class="text-neutral-200">Log In</a>
+            </li>
+            <li>
+              <a href="#" class="text-neutral-200">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="primary-nav">
+        <div class="container">
+          <ul class="nav-list flex" role="list" aria-label="Primary">
+            <li class="nav-logo ">
+              <a href="./index.html">
+                <picture>
+                  <source media="(max-width: 768px)" srcset="./assets/images/pic-main-logo-red.webp">
+                  <img src="./assets/images/pic-main-logo-dark.webp" alt="">
+                </picture>
+              </a>
+            </li>
+            <li>
+              <a href="./about.html" class="text-primary-400">About</a>
+            </li>
+            <li>
+              <a href="#services" class="nav-link">Services</a>
+            </li>
+            <li>
+              <a href="#carpenters" class="nav-link">Carpenters</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">Our Clients</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">Contact Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="about-hero | text-center bg-neutral-200">
+      <div class="container flow padding-block-900">
+        <p class="fs-600 text-neutral-800 uppercase"> Welcome to woody </p>
+        <h1 class="about-hero__title | ff-secondary fs-800 uppercase text-primary-400">
+          Best Carpenter and craftsman services
+        </h1>
+        <p class="about-hero__para | margin-center padding-400 ff-primary fs-300 bg-neutral-100 text-neutral-800 default-border default-para-width">
+          At Carpenter Company, we are a team of skilled and experienced
+          carpenters who are passionate about creating high-quality,
+          handcrafted pieces that will enhance the beauty and functionality of
+          your home. We offer a wide range of custom carpentry services,
+          including custom cabinets and built-ins, doors, windows, and trim,
+          furniture and home décor, decks, porches, and pergolas, and home
+          repairs and renovations.
+        </p>
+        <div class="ff-primary">
+          <p class="about-hero__contact margin-center fs-200 text-neutral-800 text-center default-para-width">
+            Please contact us per email for any further questions about our
+            works
+          </p>
+          <a href="" class="text-neutral-800 fw-extra-bold">
+            <p>mail@admin.com</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="about-logo">
+      <div class="container flow default padding-block-600 text-center">
+        <h2 class="fs-600 text-neutral-800 fw-extra-bold">Woody Logo</h2>
+        <p class="fs-300 text-neutral-800">The Woody Logo for this mock carpenter website
+          features a bold
+          "Woody" text, exuding strength and tradition, accompanied by subtle
+          woodworking elements for a cohesive representation of craftsmanship.
+          Set against a warm, natural color scheme, this logo creates a
+          visually appealing and inviting emblem for the website.</p>
+        <div class="about-logo__img padding-inline-400 padding-block-900">
+          <img src="./assets/images/pic-main-logo-dark.webp" alt="" class="default-border padding-400"/>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section class="about-more padding-block-900 text-center">
+      <div class="container flow">
+        <h2 class="fs-600 text-neutral-800 fw-extra-bold capitalize">See our past works
+        </h2>
+        <p class="fs-300 text-neutral-800 capitalize">Take a look at our last two projects
+        </p>
+        <div class="about-more__projects flex flex-justify-center" >
+          <div class="stacked pos-relative">
+            <div class="overlay"></div>
+            <img src="./assets/images/pic-about-pj1.jpg" alt="" />
+            <div class="flow">
+              <p class="text-neutral-200 fs-500 fw-extra-bold">General Carpentry</p>
+              <p class="text-neutral-200 fs-200 fw-extra-bold">Wooden Furniture
+                Manufacturing and Remodelling
+              </p>
+            </div>
+          </div>
+          <div class="stacked pos-relative">
+            <div class="overlay"></div>
+            <img src="./assets/images/pic-about-pj2.jpg" alt="" />
+            <div class="flow">
+              <p class="text-neutral-200 fs-500">Custom Carpentry</p>
+              <p class="text-neutral-200 fs-200">Wooden Furniture Manufacturing and
+                Remodelling
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="padding-block-600 bg-neutral-800">
+      <div class="container">
+        <div class="copyright">
+          <img class="copyright__logo fs-200" src="./assets/images/icon-logo-cc-light.svg" />
+          <div class="copyright__text flex-full-space fs-200 text-neutral-200">
+            <p class="fw-extra-bold fs-200">
+              Creative Common Some Rights Reserved
+            </p>
+            <p class="fs-200">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae
+                repellat
+                similique tenetur eius. Ad in asperiores quod velit dolores sit,
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
